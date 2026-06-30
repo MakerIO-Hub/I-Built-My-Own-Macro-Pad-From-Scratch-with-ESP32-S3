@@ -19,8 +19,6 @@ The following hardware components are integrated to ensure the stable and reliab
 
 Every component must be connected to the correct GPIO pins on the ESP32 board. Wire the system according to the tables below:
 
-###
-
 ### **1\. Display (ILI9341 TFT) Connections:**
 
 | **Display Pin** | **ESP32 GPIO Pin**     | **Description**          |
@@ -42,8 +40,6 @@ Every component must be connected to the correct GPIO pins on the ESP32 board. W
 | **LED**         | 3.3V (or via Resistor) | Display Backlight Power  |
 | ---             | ---                    | ---                      |
 
-###
-
 ### **2\. Rotary Encoder Connections:**
 
 | **Encoder Pin** | **ESP32 GPIO Pin** | **Description**               |
@@ -56,10 +52,8 @@ Every component must be connected to the correct GPIO pins on the ESP32 board. W
 | ---             | ---                | ---                           |
 | **\+ / VCC**    | 3.3V               | Power Input                   |
 | ---             | ---                | ---                           |
-| **GND**         | Ground             |                               |
+| **GND**         | GND                | Ground                        |
 | ---             | ---                | ---                           |
-
-###
 
 ### **3\. Macro Buttons (Shortcut Keys) Connections:**
 
@@ -90,27 +84,7 @@ When you connect the ESP32 board to your PC via a USB cable, these drivers allow
 - **CP210x Driver (Most Common):** Go to silabs.com, navigate to the "Downloads" tab, and install the version matching your OS.
 - **CH340 / CH341 Driver:** If your board uses the CH340 chip, search for the official driver online and install it.
 
-## **SECTION 4: Arduino IDE Configuration and Library Installation**
-
-Once the IDE is installed, additional core configurations and libraries must be loaded to support the hardware:
-
-### **1\. Installing the ESP32 Board Core Package:**
-
-- Launch **Arduino IDE**. Go to **File > Preferences**.
-- Locate the **Additional Boards Manager URLs** field and paste the following link:  
-   <https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
-- Click **OK** to save and exit.
-- Click on the **Boards Manager** icon located on the left vertical toolbar.
-- Type esp32 into the search field.
-- Find the package by **Espressif Systems** and click **Install**.
-
-### **2\. Installing the LovyanGFX Graphics Library (For Display Operation):**
-
-- Click on the **Library Manager** icon on the left vertical toolbar.
-- Type LovyanGFX into the search field.
-- Locate the official **LovyanGFX** library and click **Install**.
-
-## **SECTION 5: Firmware Preparation and Uploading Procedures**
+## **SECTION 4: Firmware Preparation and Uploading Procedures**
 
 Before initiating the flashing process, the development environment must be fully configured to recognize your hardware, and your personal parameters must be declared within the source file.
 
@@ -123,8 +97,7 @@ To enable the Arduino IDE to download the core software development packages for
 - Open the **Arduino IDE**.
 - Navigate to **File > Preferences**.
 - In the preferences window, locate the **Additional Boards Manager URLs** field.
-- Copy and paste the following URL directly into the field _(if other URLs exist, separate them using a comma)_:  
-   <https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
+- Copy and paste the following URL directly into the field _(if other URLs exist, separate them using a comma)_:<https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
 - Click **OK** to commit changes and save.
 
 ### **STEP 2: Downloading Hardware Board and Library Packages**
@@ -177,7 +150,7 @@ Connect your device to your computer using a data-backed USB cable. Access the *
 - Upon compilation success, the flash utility terminal window will show real-time memory address allocations tracking up to completion (Writing at 0x00010000... %100).
 - When the flashing routine finishes, the ESP32 chip will execute a reset, establish a handshake with your configured wireless local network, sync up local time, and render your center-aligned, modern UI dashboard displaying time, calendar telemetry, and live weather conditions for İzmir. Your device is now active and operational!
 
-## **SECTION 6: Operation and User Instructions**
+## **SECTION 5: Operation and User Instructions**
 
 - **Time and Date:** The unit establishes real-time connections with Network Time Protocol (NTP) servers via Wi-Fi, updating the clock on the UI precisely every second.
 - **Live Weather Updates:** Environmental telemetry for İzmir updates silently in the background every 15 minutes, displaying conditions in English on the primary graphical screen.
