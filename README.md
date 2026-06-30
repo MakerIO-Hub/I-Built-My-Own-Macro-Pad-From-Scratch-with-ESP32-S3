@@ -2,6 +2,10 @@
 
 This guide walks you through all phases of the project in sequential order, from the hardware component list and wiring schematics to the required computer drivers and library installations.
 
+## **Step by Step tutorial on youtube**: <https://youtu.be/Mk3VkKXWFn4>
+
+##
+
 ## **SECTION 1: Hardware Components Used**
 
 The following hardware components are integrated to ensure the stable and reliable operation of the system:
